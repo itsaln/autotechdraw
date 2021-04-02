@@ -1,0 +1,914 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/libs.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<svg style="display: none">
+    <symbol id="telegram" viewBox="0 0 20 20">
+        <path d="M19.2071 1.32333L0 9.09306V10.2161L5.50115 11.9144L7.24095 17.496L8.62976 17.4958L10.8689 15.2048L15.5958 18.6767L16.5158 18.3266L20 1.98881L19.2071 1.32333ZM15.5587 17.1952L9.33337 12.6227L8.63953 13.5673L9.91493 14.5041L8.10329 16.3239L6.68173 11.7633L14.9156 6.8471L14.3148 5.8408L5.95976 10.8293L1.91775 9.58156L18.6236 2.82369L15.5587 17.1952Z"></path>
+    </symbol>
+    <symbol id="facebook" viewBox="0 0 20 20">
+        <path d="M11.5415 6.55327V4.83C11.5415 4.57131 11.5534 4.37093 11.5775 4.22938C11.6017 4.08762 11.6565 3.9482 11.7416 3.81056C11.8266 3.67301 11.9641 3.57805 12.1542 3.52543C12.3444 3.47272 12.5972 3.44645 12.9129 3.44645H14.6361V0H11.8813C10.2873 0 9.14242 0.378183 8.44659 1.13455C7.75084 1.89108 7.40301 3.00544 7.40301 4.47805V6.55323H5.33965V9.99994H7.40288V19.9999H11.5414V9.99998H14.2961L14.6602 6.55327H11.5415V6.55327Z"></path>
+    </symbol>
+    <symbol id="instagram" viewBox="0 0 20 20">
+        <path d="M19.9804 5.88005C19.9335 4.81738 19.7617 4.0868 19.5155 3.45374C19.2616 2.78176 18.8709 2.18014 18.359 1.68002C17.8589 1.1721 17.2533 0.777435 16.5891 0.527447C15.9524 0.281274 15.2256 0.109427 14.1629 0.0625732C13.0923 0.0117516 12.7524 0 10.0371 0C7.32169 0 6.98182 0.0117516 5.91517 0.0586052C4.8525 0.105459 4.12192 0.277459 3.48901 0.523479C2.81688 0.777435 2.21527 1.16814 1.71514 1.68002C1.20723 2.18014 0.812712 2.78573 0.562572 3.44992C0.3164 4.0868 0.144552 4.81341 0.0976989 5.87609C0.0468773 6.9467 0.0351257 7.28658 0.0351257 10.002C0.0351257 12.7173 0.0468773 13.0572 0.0937308 14.1239C0.140584 15.1865 0.312584 15.9171 0.558756 16.5502C0.812712 17.2221 1.20723 17.8238 1.71514 18.3239C2.21527 18.8318 2.82085 19.2265 3.48504 19.4765C4.12192 19.7226 4.84853 19.8945 5.91136 19.9413C6.97785 19.9883 7.31788 19.9999 10.0332 19.9999C12.7486 19.9999 13.0885 19.9883 14.1551 19.9413C15.2178 19.8945 15.9484 19.7226 16.5813 19.4765C17.9254 18.9568 18.9881 17.8941 19.5077 16.5502C19.7538 15.9133 19.9258 15.1865 19.9726 14.1239C20.0195 13.0572 20.0312 12.7173 20.0312 10.002C20.0312 7.28658 20.0273 6.9467 19.9804 5.88005ZM18.1794 14.0457C18.1363 15.0225 17.9723 15.5499 17.8355 15.9015C17.4994 16.7728 16.8079 17.4643 15.9366 17.8004C15.585 17.9372 15.0538 18.1012 14.0808 18.1441C13.0259 18.1911 12.7095 18.2027 10.041 18.2027C7.37252 18.2027 7.05217 18.1911 6.0011 18.1441C5.02434 18.1012 4.4969 17.9372 4.14527 17.8004C3.71168 17.6402 3.31701 17.3862 2.99667 17.0541C2.66457 16.7298 2.41062 16.3391 2.25037 15.9055C2.11362 15.5539 1.94956 15.0225 1.90667 14.0497C1.85967 12.9948 1.84807 12.6783 1.84807 10.0097C1.84807 7.34122 1.85967 7.02087 1.90667 5.96995C1.94956 4.99319 2.11362 4.46575 2.25037 4.11412C2.41062 3.68038 2.66457 3.28586 3.00064 2.96536C3.3248 2.63327 3.7155 2.37931 4.14923 2.21921C4.50087 2.08247 5.03228 1.9184 6.00506 1.87537C7.05996 1.82851 7.37648 1.81676 10.0448 1.81676C12.7173 1.81676 13.0337 1.82851 14.0848 1.87537C15.0615 1.9184 15.589 2.08247 15.9406 2.21921C16.3742 2.37931 16.7689 2.63327 17.0892 2.96536C17.4213 3.28967 17.6753 3.68038 17.8355 4.11412C17.9723 4.46575 18.1363 4.99701 18.1794 5.96995C18.2262 7.02484 18.238 7.34122 18.238 10.0097C18.238 12.6783 18.2262 12.9908 18.1794 14.0457Z"></path>
+        <path d="M10.0371 4.86423C7.20069 4.86423 4.89937 7.1654 4.89937 10.0019C4.89937 12.8385 7.20069 15.1397 10.0371 15.1397C12.8736 15.1397 15.1748 12.8385 15.1748 10.0019C15.1748 7.1654 12.8736 4.86423 10.0371 4.86423ZM10.0371 13.3347C8.19698 13.3347 6.70438 11.8422 6.70438 10.0019C6.70438 8.16169 8.19698 6.66924 10.0371 6.66924C11.8774 6.66924 13.3698 8.16169 13.3698 10.0019C13.3698 11.8422 11.8774 13.3347 10.0371 13.3347V13.3347Z"></path>
+        <path d="M16.5775 4.6611C16.5775 5.32346 16.0405 5.86052 15.378 5.86052C14.7156 5.86052 14.1785 5.32346 14.1785 4.6611C14.1785 3.99858 14.7156 3.46167 15.378 3.46167C16.0405 3.46167 16.5775 3.99858 16.5775 4.6611V4.6611Z"></path>
+    </symbol>
+    <symbol id="swiper-arrow" viewBox="0 0 75 75">
+        <path d="M54.4304 16.9305L51.0896 20.2713L65.9558 35.1377H0V39.8625H65.9558L51.0896 54.7287L54.4304 58.0696L75 37.4999L54.4304 16.9305Z"/>
+    </symbol>
+    <symbol id="arrow" viewBox="0 0 24 24">
+        <path d="M11.9999 18.8403C11.5698 18.8403 11.1397 18.6761 10.8118 18.3483L0.492339 8.02874C-0.164113 7.37229 -0.164113 6.30796 0.492339 5.65178C1.14853 4.99559 2.21264 4.99559 2.86914 5.65178L11.9999 14.7831L21.1308 5.6521C21.7872 4.99591 22.8512 4.99591 23.5074 5.6521C24.1641 6.30828 24.1641 7.37261 23.5074 8.02906L13.1881 18.3486C12.86 18.6765 12.4299 18.8403 11.9999 18.8403Z"/>
+    </symbol>
+    <symbol id="swiper-arrow" viewBox="0 0 25 25">
+        <path d="M18.1435 5.64349L17.0299 6.75712L21.9853 11.7126H0V13.2875H21.9853L17.0299 18.2429L18.1435 19.3565L25 12.5L18.1435 5.64349Z"/>
+    </symbol>
+    <symbol id="star" viewBox="0 0 24 24">
+        <path d="M24 9.26493L15.2812 8.70238L11.9906 0.447693L8.69995 8.70238L0 9.26493L6.67495 14.9461L4.4812 23.5524L11.9906 18.7993L19.5 23.5524L17.3063 14.9461L24 9.26493Z"/>
+    </symbol>
+</svg>
+
+<div class="loader">
+    <div class="page-lines">
+        <div class="container">
+            <div class="col-line col-xs-4">
+                <div class="line"></div>
+            </div>
+            <div class="col-line col-xs-4">
+                <div class="line"></div>
+            </div>
+            <div class="col-line col-xs-4">
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+    <div class="loader-brand">
+        <div class="sk-folding-cube">
+            <div class="sk-cube1 sk-cube"></div>
+            <div class="sk-cube2 sk-cube"></div>
+            <div class="sk-cube4 sk-cube"></div>
+            <div class="sk-cube3 sk-cube"></div>
+        </div>
+    </div>
+</div>
+
+<div id="wrapper">
+
+    <header class="header">
+        <div class="header-menu">
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">О компании</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Продукция</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Проекты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Новости</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Скачать</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="container">
+            <div class="header-wrap">
+                <div class="logo fadeIn wow" data-wow-delay=".3s" data-wow-duration="1.2s">
+                    <a href="#"><img src="img/logo.png" alt=""></a>
+                </div>
+                <div class="burger-wrap">
+                    <a href="#" class="dropdown-toggle fadeInRight wow" data-wow-delay="1s" data-toggle="dropdown">
+                        <span>Услуги</span>
+                        <svg width="9" height="9">
+                            <use xlink:href="#arrow"></use>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#">О компании</a>
+                        <a href="#">Что мы делаем</a>
+                        <a href="#">Наша команда</a>
+                        <a href="#">Контакты</a>
+                    </div>
+                    <p class="fadeInRight wow" data-wow-delay="1.4s" data-wow-duration=".5s">Меню</p>
+                    <div class="header__hamburger fadeIn wow" data-wow-delay=".3s">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <section class="hero-sm" style="background-image: url('img/hero-bg.jpg')">
+            <div class="container">
+                <h1 class="text-center fadeInUp wow">Дизайн интерьера</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb fadeInUp wow" data-wow-delay=".2s">
+                        <li class="breadcrumb-item"><a href="#">Главная</a></li>
+                        <li class="breadcrumb-item"><a href="#">Наши услуги</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Дизайн интерьера</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <section class="slider-about">
+            <div class="container">
+                <h2 class="text-left">Что мы делаем</h2>
+                <div class="row slider-about__wrap">
+                    <div class="col-lg-4">
+                        <ul class="circle-list">
+                            <li><a href="#">Дизайн интерьера жилых зданий</a></li>
+                            <li><a href="#">Дизайн интерьера квартир</a></li>
+                            <li><a href="#">Дизайн интерьера частных городских домов</a></li>
+                            <li><a href="#">Дизайн интерьера дач, коттеджей</a></li>
+                            <li><a href="#">Дизайн интерьера отдельных жилых помещений</a></li>
+                            <li><a href="#">Дизайн интерьера однокомнатной квартиры</a></li>
+                            <li><a href="#">Дизайн интерьера двухкомнатной квартиры</a></li>
+                            <li><a href="#">Дизайн интерьера трехкомнатной квартиры</a></li>
+                            <li><a href="#">Дизайн интерьера четырехкомнатной квартиры</a></li>
+                            <li><a href="#">Дизайн интерьера кухни</a></li>
+                            <li><a href="#">Дизайн интерьера гостиной</a></li>
+                            <li><a href="#">Дизайн интерьера спальни</a></li>
+                            <li><a href="#">Дизайн интерьера прихожей</a></li>
+                            <li><a href="#">Дизайн интерьера ванной</a></li>
+                            <li><a href="#">Дизайн интерьера нежилых зданий</a></li>
+                            <li><a href="#">Дизайн интерьера кафе, баров, ресторанов</a></li>
+                            <li><a href="#">Дизайн интерьера гостиниц, отелей</a></li>
+                            <li><a href="#">Дизайн интерьера офисов</a></li>
+                            <li><a href="#">Дизайн интерьера образовательных учреждений</a></li>
+                            <li><a href="#">Дизайн интерьера многоквартирных жилых домов</a></li>
+                            <li><a href="#">Дизайн интерьера торговых центров, магазинов</a></li>
+                            <li><a href="#">Дизайн интерьера складских помещений</a></li>
+                            <li><a href="#">Дизайн интерьера рабочих пространств, цехов</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="slider-about__swiper swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="img/about/001.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/about/002.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/about/001.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/about/002.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/about/001.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="img/about/002.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev">
+                                <svg width="25" height="25">
+                                    <use xlink:href="#swiper-arrow"></use>
+                                </svg>
+                                <span>Prev</span>
+                            </div>
+                            <div class="swiper-button-next">
+                                <span>Next</span>
+                                <svg width="25" height="25">
+                                    <use xlink:href="#swiper-arrow"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tariffs bg-dark">
+            <ul class="big-title__list">
+                <li>Tariffs</li>
+                <li>Tariffs</li>
+                <li>Tariffs</li>
+                <li>Tariffs</li>
+                <li>Tariffs</li>
+                <li>Tariffs</li>
+                <li>Tariffs</li>
+                <li>Tariffs</li>
+                <li>Tariffs</li>
+                <li>Tariffs</li>
+            </ul>
+            <div class="container">
+                <h2 class="fadeInUp wow">Проектирование интерьера</h2>
+                <p class="sub-title fadeInUp wow" data-wow-delay=".2s">В каждом проекте мы решили комплекс задач: <br>
+                    от раскрытия потенциала помещения до разработки деталей</p>
+                <div class="row tariffs-wrap">
+                    <div class="col-lg-4">
+                        <div class="tariffs-item">
+                            <div class="tariffs-item__body">
+                                <h5 class="line-before fadeInUp wow">Базовый</h5>
+                                <ul class="circle-list">
+                                    <li>4-5 вариантов планировок
+                                    <li>Выезд дизайнера на объект</li>
+                                    <li>Обмерный план квартиры</li>
+                                    <li>План расстановки мебели</li>
+                                    <li>Экспликация помещений</li>
+                                    <li>План сносимых перегородок</li>
+                                    <li>План возводимых перегородок</li>
+                                    <li>План дверных проемов</li>
+                                    <li>План сантехприборов</li>
+                                </ul>
+                                <a href="#" class="more-link">Весь список</a>
+                            </div>
+                            <div class="tariffs-item__footer">
+                                <b class="price">50 000 <span>сум/м²</span></b>
+                                <a href="#" class="btn btn-out-black fadeIn wow" data-wow-delay=".3s">Заказать сейчас</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="tariffs-item">
+                            <div class="tariffs-item__body">
+                                <h5 class="line-before fadeInUp wow" data-wow-delay=".2s">Оптимальный</h5>
+                                <ul class="circle-list">
+                                    <li>Весь набор опций из пакета «Базовый»</li>
+                                    <li>Развертка стен помещений и санузлов</li>
+                                    <li>3D визуализация помещений</li>
+                                    <li>3D визуализация санузлов</li>
+                                    <li>Подбор материалов</li>
+                                    <li>Подбор напольных покрытий</li>
+                                    <li>Подбор обоев, дверей</li>
+                                    <li>Подбор сантехники</li>
+                                    <li>Подбор плитки</li>
+                                    <li>Разработка кухонной мебели</li>
+                                </ul>
+                            </div>
+                            <div class="tariffs-item__footer">
+                                <b class="price">100 000 <span>сум/м²</span></b>
+                                <a href="#" class="btn btn-out-black">Заказать сейчас</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="tariffs-item">
+                            <div class="tariffs-item__body">
+                                <h5 class="line-before fadeInUp wow" data-wow-delay=".3s">Комплексный</h5>
+                                <ul class="circle-list">
+                                    <li>Весь набор из пакета «Оптимальный»</li>
+                                    <li>Подбор штор</li>
+                                    <li>Подбор мебели</li>
+                                    <li>Проектирование мебели</li>
+                                    <li>Декорирование, подбор картин</li>
+                                    <li>5 выездов дизайнера</li>
+                                    <li>Технический проект отоплении</li>
+                                    <li>Технический проект вентиляции</li>
+                                    <li>Технический проект водопровода</li>
+                                    <li>Расчёт сметной стоимости проекта</li>
+                                </ul>
+                            </div>
+                            <div class="tariffs-item__footer">
+                                <b class="price">200 000 <span>сум/м²</span></b>
+                                <a href="#" class="btn btn-out-black">Заказать сейчас</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="question">
+            <ul class="big-title__list">
+                <li>Questions</li>
+                <li>Questions</li>
+                <li>Questions</li>
+                <li>Questions</li>
+                <li>Questions</li>
+                <li>Questions</li>
+                <li>Questions</li>
+                <li>Questions</li>
+                <li>Questions</li>
+                <li>Questions</li>
+            </ul>
+            <div class="container">
+                <h2 class="fadeInUp wow">Часто задаваемые вопросы</h2>
+                <p class="sub-title fadeInUp wow" data-wow-delay=".2s">Мы говорим на одном языке с вами! <br> Моделируя
+                    пространство, мы используем самые продвинутые графические редакторы</p>
+                <div class="row question-wrap">
+                    <div class="col-lg-12">
+                        <div class="question-accordion accordion">
+                            <div class="accordion-item">
+                                <a href="javascript:" data-toggle="collapse" data-target="#accordion-link-1"
+                                   aria-expanded="true" class="accordion-link">
+                                    <span>Сколько стоит полноценный дизайн проект?</span>
+                                    <span class="accordion-icon"></span>
+                                </a>
+                                <div id="accordion-link-1" class="accordion-content show">
+                                    <p>Различают внутренние и наружные инженерные системы и сети. Проектирование
+                                        внутренних
+                                        инженерных сетей включает в себя:</p>
+                                    <ul class="line-list">
+                                        <li>Проект водоснабжения и канализации</li>
+                                        <li>Проект вентиляции и кондиционирования</li>
+                                        <li>Проект отопления</li>
+                                        <li>Проект ИТП или котельной</li>
+                                        <li>Проект электроснабжения и освещения</li>
+                                        <li>Проекты слаботочных систем (охранной и пожарной сигнализации, системы
+                                            видеонаблюдения, телефонизации, радиофикации, часофикации, контроля доступа,
+                                            ЛВС,
+                                            автоматизации и диспетчеризации инженерных систем, системы «Умный дом»)
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <a href="javascript:" data-toggle="collapse" data-target="#accordion-link-2"
+                                   aria-expanded="false" class="accordion-link">
+                                    <span>В чем уникальность mccm?</span>
+                                    <span class="accordion-icon"></span>
+                                </a>
+                                <div id="accordion-link-2" class="accordion-content collapse">
+                                    <p>Различают внутренние и наружные инженерные системы и сети. Проектирование
+                                        внутренних
+                                        инженерных сетей включает в себя:</p>
+                                    <ul class="line-list">
+                                        <li>Проект водоснабжения и канализации</li>
+                                        <li>Проект вентиляции и кондиционирования</li>
+                                        <li>Проект отопления</li>
+                                        <li>Проект ИТП или котельной</li>
+                                        <li>Проект электроснабжения и освещения</li>
+                                        <li>Проекты слаботочных систем (охранной и пожарной сигнализации, системы
+                                            видеонаблюдения, телефонизации, радиофикации, часофикации, контроля доступа,
+                                            ЛВС,
+                                            автоматизации и диспетчеризации инженерных систем, системы «Умный дом»)
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <a href="javascript:" data-toggle="collapse" data-target="#accordion-link-3"
+                                   aria-expanded="false" class="accordion-link">
+                                    <span>Почему mccm использует PEG, когда остальные используют BBDE? Безопасен ли он?</span>
+                                    <span class="accordion-icon"></span>
+                                </a>
+                                <div id="accordion-link-3" class="accordion-content collapse">
+                                    <p>Различают внутренние и наружные инженерные системы и сети. Проектирование
+                                        внутренних
+                                        инженерных сетей включает в себя:</p>
+                                    <ul class="line-list">
+                                        <li>Проект водоснабжения и канализации</li>
+                                        <li>Проект вентиляции и кондиционирования</li>
+                                        <li>Проект отопления</li>
+                                        <li>Проект ИТП или котельной</li>
+                                        <li>Проект электроснабжения и освещения</li>
+                                        <li>Проекты слаботочных систем (охранной и пожарной сигнализации, системы
+                                            видеонаблюдения, телефонизации, радиофикации, часофикации, контроля доступа,
+                                            ЛВС,
+                                            автоматизации и диспетчеризации инженерных систем, системы «Умный дом»)
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <a href="javascript:" data-toggle="collapse" data-target="#accordion-link-4"
+                                   aria-expanded="false" class="accordion-link">
+                                    <span>Почему я должен выбирать mccm?</span>
+                                    <span class="accordion-icon"></span>
+                                </a>
+                                <div id="accordion-link-4" class="accordion-content collapse">
+                                    <p>Различают внутренние и наружные инженерные системы и сети. Проектирование
+                                        внутренних
+                                        инженерных сетей включает в себя:</p>
+                                    <ul class="line-list">
+                                        <li>Проект водоснабжения и канализации</li>
+                                        <li>Проект вентиляции и кондиционирования</li>
+                                        <li>Проект отопления</li>
+                                        <li>Проект ИТП или котельной</li>
+                                        <li>Проект электроснабжения и освещения</li>
+                                        <li>Проекты слаботочных систем (охранной и пожарной сигнализации, системы
+                                            видеонаблюдения, телефонизации, радиофикации, часофикации, контроля доступа,
+                                            ЛВС,
+                                            автоматизации и диспетчеризации инженерных систем, системы «Умный дом»)
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 d-flex justify-content-center">
+                        <a href="#" class="btn btn-out-black">Смотреть все</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team bg-dark">
+            <ul class="big-title__list">
+                <li>Team</li>
+                <li>Team</li>
+                <li>Team</li>
+                <li>Team</li>
+                <li>Team</li>
+                <li>Team</li>
+                <li>Team</li>
+                <li>Team</li>
+                <li>Team</li>
+                <li>Team</li>
+            </ul>
+            <div class="container">
+                <h2 class="fadeInUp wow">Наша команда</h2>
+                <p class="sub-title fadeInUp wow" data-wow-delay=".2s">В каждом проекте мы решили комплекс задач: <br>
+                    от раскрытия потенциала помещения до разработки деталей</p>
+                <div class="row team-wrap">
+                    <div class="col-lg-12">
+                        <div class="team-banner">
+                            <img src="img/team/001.jpg" alt="">
+                        </div>
+                        <div class="row team-item__wrap lightgallery">
+                            <div class="my-col-lg-20 col-6" data-src="img/team/002.jpg">
+                                <div class="team-item fadeIn wow" data-wow-delay=".2s">
+                                    <img src="img/team/002.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="my-col-lg-20 col-6" data-src="img/team/003.jpg">
+                                <div class="team-item fadeIn wow" data-wow-delay=".4s">
+                                    <img src="img/team/003.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews">
+            <ul class="big-title__list">
+                <li>Reviews</li>
+                <li>Reviews</li>
+                <li>Reviews</li>
+                <li>Reviews</li>
+                <li>Reviews</li>
+                <li>Reviews</li>
+                <li>Reviews</li>
+                <li>Reviews</li>
+                <li>Reviews</li>
+                <li>Reviews</li>
+            </ul>
+            <div class="container">
+                <h2 class="fadeInUp wow">Отзывы наших клиентов</h2>
+                <p class="sub-title fadeInUp wow" data-wow-delay=".2s">В каждом проекте мы решили комплекс задач: <br>
+                    от раскрытия потенциала помещения до разработки деталей</p>
+                <div class="row reviews-wrap">
+                    <div class="col-lg-8">
+                        <div class="reviews-swiper swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="reviews-swiper__item">
+                                        <p class="text-message">Ребята молодцы. Работают быстро и качественно. Будем
+                                            работать и дальше с этой командой!</p>
+                                        <p class="text-name">Алишер Усманов <span>Основатель «USM Holdings»</span></p>
+                                        <ul class="star-list">
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="reviews-swiper__item">
+                                        <p class="text-message">Ребята молодцы. Работают быстро и качественно. Будем
+                                            работать и дальше с этой командой!</p>
+                                        <p class="text-name">Алишер Усманов <span>Основатель «USM Holdings»</span></p>
+                                        <ul class="star-list">
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="reviews-swiper__item">
+                                        <p class="text-message">Ребята молодцы. Работают быстро и качественно. Будем
+                                            работать и дальше с этой командой!</p>
+                                        <p class="text-name">Алишер Усманов <span>Основатель «USM Holdings»</span></p>
+                                        <ul class="star-list">
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="reviews-swiper__item">
+                                        <p class="text-message">Ребята молодцы. Работают быстро и качественно. Будем
+                                            работать и дальше с этой командой!</p>
+                                        <p class="text-name">Алишер Усманов <span>Основатель «USM Holdings»</span></p>
+                                        <ul class="star-list">
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="reviews-swiper__item">
+                                        <p class="text-message">Ребята молодцы. Работают быстро и качественно. Будем
+                                            работать и дальше с этой командой!</p>
+                                        <p class="text-name">Алишер Усманов <span>Основатель «USM Holdings»</span></p>
+                                        <ul class="star-list">
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                            <li>
+                                                <svg width="22" height="22">
+                                                    <use xlink:href="#star"></use>
+                                                </svg>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="feedback bg-dark">
+            <span class="big-title"></span>
+            <ul class="big-title__list">
+                <li>Feedback</li>
+                <li>Feedback</li>
+                <li>Feedback</li>
+                <li>Feedback</li>
+                <li>Feedback</li>
+                <li>Feedback</li>
+                <li>Feedback</li>
+                <li>Feedback</li>
+                <li>Feedback</li>
+                <li>Feedback</li>
+            </ul>
+            <div class="container">
+                <h2 class="fadeInUp wow">Заказать услугу</h2>
+                <p class="sub-title fadeInUp wow" data-wow-delay=".2s">Задайте интересующий Вас вопрос и <br> мы с
+                    удовольствием ответим в самое ближайщее время</p>
+                <div class="row feedback-wrap">
+                    <div class="col-lg-6 offset-lg-3">
+                        <form class="form-feedback">
+                            <div class="form-wrap">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="f_name" class="sr-only"></label>
+                                            <input id="f_name" type="text" class="form-control" placeholder="Ваше имя">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="f_phone" class="sr-only"></label>
+                                            <input id="f_phone" type="tel" class="form-control"
+                                                   placeholder="Ваш номер +998">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="f_message" class="sr-only"></label>
+                                    <textarea id="f_message" class="form-control" rows="5"
+                                              placeholder="Что вас интересует?"></textarea>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-out-white bounceIn wow" data-wow-delay=".2s">Отправить
+                                сообщение
+                            </button>
+                        </form>
+                    </div>
+                    <div class="col-lg-3 disabled"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects">
+            <div class="container">
+                <h3>Примеры наших проектов</h3>
+                <p class="sub-title">Коллектив дизайн-студии ATD — это команда активных и целеустремленных специалистов
+                    разного профиля. У нас работают дизайнеры, архитекторы, проектировщики и представители других
+                    специальностей. Большинство сотрудников — профессионалы с большим стажем (до 25 лет). Есть и молодые
+                    специалисты, которые делают все возможное для своего профессионального роста. Совместные усилия
+                    коллектива <br><b>Autotechdraw</b> позволяют нам демонстрировать безупречное качество всех
+                    выполненных работ по следующим направлениям:</p>
+                <div class="row projects-wrap">
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="projects-item">
+                            <img src="img/projects/001.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6">
+                        <div class="projects-item">
+                            <img src="img/projects/002.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>Все перечисленные работы могут проводиться, как отдельно, так и в комплексе. Работая над каждым проектом, мы применяем индивидуальный подход. Это значит, что специалисты учитывают все пожелания и требования заказчика, а также особенности объекта. При этом сотрудники в обязательном порядке соблюдают установленные стандарты и нормы.</p>
+                        <div class="projects-buttons">
+                            <a href="#" class="projects-button-prev">
+                                <svg width="25" height="25">
+                                    <use xlink:href="#swiper-arrow"></use>
+                                </svg>
+                                <span>Prev</span>
+                            </a>
+                            <a href="#" class="projects-button-next">
+                                <span>Next</span>
+                                <svg width="25" height="25">
+                                    <use xlink:href="#swiper-arrow"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer bg-dark">
+        <div class="footer-top">
+            <ul class="big-title__list">
+                <li>Contacts</li>
+                <li>Contacts</li>
+                <li>Contacts</li>
+                <li>Contacts</li>
+                <li>Contacts</li>
+                <li>Contacts</li>
+                <li>Contacts</li>
+                <li>Contacts</li>
+                <li>Contacts</li>
+                <li>Contacts</li>
+            </ul>
+            <div class="container">
+                <h2 class="fadeInUp wow">Наши контакты</h2>
+                <p class="sub-title fadeInUp wow" data-wow-delay=".2s">Мы говорим на одном языке с вами! <br> Моделируя
+                    пространство, мы используем самые
+                    продвинутые графические редакторы</p>
+                <div class="row footer-top__wrap">
+                    <div class="col-lg-5 col-sm-8 footer-about">
+                        <ul class="footer-about__list">
+                            <li class="fadeInUp wow" data-wow-delay=".2s">
+                                <a href="#">Разработка дизайн интерьера</a>
+                            </li>
+                            <li class="fadeInUp wow" data-wow-delay=".3s">
+                                <a href="#">Проектирование инженерных систем</a>
+                            </li>
+                            <li class="fadeInUp wow" data-wow-delay=".4s">
+                                <a href="#">Разработка дизайна экстерьера</a>
+                            </li>
+                            <li class="fadeInUp wow" data-wow-delay=".5s">
+                                <a href="#">Разработка ландшафтного дизайна</a>
+                            </li>
+                            <li class="fadeInUp wow" data-wow-delay=".6s">
+                                <a href="#">Разработка полноценного дизайн проекта</a>
+                            </li>
+                            <li class="fadeInUp wow" data-wow-delay=".7s">
+                                <a href="#">Создание 3D видео презентаций архитектуры и интерьера</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-sm-4 footer-navbar">
+                        <ul class="footer-navbar__list">
+                            <li class="fadeInUp wow" data-wow-delay=".2s">
+                                <a href="#">Главная</a>
+                            </li>
+                            <li class="fadeInUp wow" data-wow-delay=".3s">
+                                <a href="#">О Нас</a>
+                            </li>
+                            <li class="fadeInUp wow" data-wow-delay=".4s">
+                                <a href="#">Услуги</a>
+                            </li>
+                            <li class="fadeInUp wow" data-wow-delay=".5s">
+                                <a href="#">Проекты</a>
+                            </li>
+                            <li class="fadeInUp wow" data-wow-delay=".6s">
+                                <a href="#">Каталоги</a>
+                            </li>
+                            <li class="fadeInUp wow" data-wow-delay=".7s">
+                                <a href="#">Новости</a>
+                            </li>
+                            <li class="fadeInUp wow" data-wow-delay=".8s">
+                                <a href="#">Контакты</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 footer-contacts">
+                        <ul class="footer-contacts__list">
+                            <li class="fadeInUp wow" data-wow-delay=".2s">
+                                <a href="tel:998978300000">+998978300000;</a>
+                                <a href="tel:998935017115">+998935017115;</a>
+                                <a href="tel:998712645111">+998712645111</a>
+                            </li>
+                            <li class="fadeInUp wow" data-wow-delay=".3s">
+                                <span>E-mail: </span>
+                                <a href="mailto:info@atd-design.uz">info@atd-design.uz</a>
+                            </li>
+                            <li class="fadeInUp wow" data-wow-delay=".4s">
+                                <span>E-mail: </span>
+                                <a href="mailto:info@aziagidromash.uz" class="hover-line">info@aziagidromash.uz</a>
+                            </li>
+                            <li class="fadeInUp wow" data-wow-delay=".5s">
+                                <span>Город Ташкент, Мирзо-Улугбекский район, улица Ахмад-Югнакий, дом номер 38</span>
+                            </li>
+                            <li class="fadeInUp wow" data-wow-delay=".6s">
+                                <a href="#" class="more-link">Показать на карте</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row footer-bottom__wrap">
+                    <div class="col-lg-4 copyright-block">
+                        <p>&copy; 2020 Autotechdraw. Все права защищены</p>
+                    </div>
+                    <div class="col-lg-4 footer-social__list">
+                        <ul>
+                            <li class="fadeIn wow" data-wow-delay=".2s">
+                                <a href="#">
+                                    <svg width="20" height="20">
+                                        <use xlink:href="#telegram"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="fadeIn wow" data-wow-delay=".4s">
+                                <a href="#">
+                                    <svg width="20" height="20">
+                                        <use xlink:href="#facebook"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="fadeIn wow" data-wow-delay=".6s">
+                                <a href="#">
+                                    <svg width="20" height="20">
+                                        <use xlink:href="#instagram"></use>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 footer-logo">
+                        <div class="footer-logo">
+                            <p>Разработка сайта —</p>
+                            <img src="img/footer-logo.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="page-lines">
+        <div class="col-line my-col-lg-20 my-col-sm-100">
+            <div class="line"></div>
+        </div>
+        <div class="col-line my-col-lg-20 my-col-sm-100">
+            <div class="line"></div>
+        </div>
+        <div class="col-line my-col-lg-20 my-col-sm-100">
+            <div class="line"></div>
+        </div>
+        <div class="col-line my-col-lg-20 my-col-sm-100">
+            <div class="line"></div>
+        </div>
+        <div class="col-line my-col-lg-20 my-col-sm-100">
+            <div class="line"></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="js/libs.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
